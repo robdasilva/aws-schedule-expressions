@@ -103,7 +103,7 @@ func isValidCronExpression(pattern string) bool {
 
 var (
 	valueRegex = regexp.MustCompile(exactly("[1-9][0-9]*"))
-	unitRegex  = regexp.MustCompile(exactly(either("minutes", "hours", "days")))
+	unitRegex  = regexp.MustCompile(exactly(either("minutes?", "hours?", "days?")))
 )
 
 func isValidRateExpression(pattern string) bool {

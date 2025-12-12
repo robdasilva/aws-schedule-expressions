@@ -16,6 +16,7 @@ func TestValidate(t *testing.T) {
 			"cron(0 18 ? * MON-FRI *)",
 			"cron(15 10 ? * 6L 2022)",
 			"rate(1 days)",
+			"rate(10 hour)",
 			"rate(5 minutes)",
 		},
 		false: {
@@ -26,7 +27,6 @@ func TestValidate(t *testing.T) {
 			"cron(60 12 * * ? *)",         // Invalid minute
 			"every(5 minutes)",            // Invalid type
 			"rate(-5 minutes)",            // Negative rate
-			"rate(10 hour)",               // Singular unit
 			"rate(0 days)",                // Zero rate
 		},
 	}
